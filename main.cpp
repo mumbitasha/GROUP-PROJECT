@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<fstream>
 using namespace std;
 
     //how the students are represented
@@ -100,9 +101,22 @@ using namespace std;
                 cout <<activity<<endl"";
                 cout<< endl;
             }
-
+}
+    ofstream file("student_data.csv", ios::app);
+    if (file. is_open()) {
+        file << fisrtname << " | " << tsurname << " | " << tgender << " | " << tage << " | " << tclubs/societies << " | " << tsport;
+        file.close();
+        cout << "Student data saved \n";
+    } else {
+         cout << "Filed to open file for writing \n";
     }
-
+}
+void viewstudents() {
+    ifstream file ("student_data.csv");
+    if (!file.is_open()) {
+        cout << "Failed to open file for reading .\n";
+        return 0;
+    }
 
 
 
