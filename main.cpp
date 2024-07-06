@@ -59,8 +59,48 @@ using namespace std;
                     return 0;
                 default: cout << "Invalid choice. Please try again." << endl;
             }
+        student student;
+                    cout <<"enter student details:"<<endl;
+                    cout<<"firstname:";
+                    cin >> student.firstname;
+                    cout<<"surname:";
+                    cin>> student.surname;
+                    cout<<"gender(m/f):";
+                    cin>> student.gender;
+                    cout<<"age:";
+                    cin>> student.age;
+                    cout<<"bbit group(1/2/3):";
+                    cin>> student.bbitgroup;
+                }
+
+                //check if student is willing to participate in clubs/societies
+                cout << "enter number of clubs/societies(max 3):";
+                int numClubs;
+                cin >> numClubs;
+                cin.ignore();//clear input buffer
+
+
+                //loop to get details for chosen clubs/societies
+                for (int i = 0; i < numClubs; i ++) {
+                    string club;
+                    cout <<"enter club/society"<<i + 1 << ":";
+                    getline(cin,club);
+                    //adding information of the club to the list of activites of the added student
+            }
+            //add the student to the structure vector after getting all club choices
+            student.push_back(newstudent);
+            cout << "student successfully added" << endl;
         }
-        return 0;
+        void viewstudents(vector<student>& students);
+            cout << "\n=== list of students ===" <<endl;
+            cout <<"total students:" <<endl;
+
+            cout <<"firstname\tsurname\tgender\tage\tbbitgroup\tsport\tclubs/societies"<<endl;
+            for (const auto& student : student) {
+                cout <<activity<<endl"";
+                cout<< endl;
+            }
+
     }
 
 
