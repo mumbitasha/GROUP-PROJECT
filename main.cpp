@@ -34,12 +34,13 @@ using namespace std;
     void viewsports();
     void enrolledstudents();
     void savealldata();
-    bool canjoinactivity(student student, activity&activity);
+    bool canjoinactivity(const student student, const activity&activity);
     void allocateactivity(student&student, activity activity);
     void displaymenu();
 
     int main() {
         int choice;
+        //main loop for user iteration
         while (true) {
             displaymenu();
             cin >> choice;
@@ -57,10 +58,12 @@ using namespace std;
                 case 6: savealldata();
                 break;
                 case 7:
-                    return 0;
+                    return 0;//exit the program
                 default: cout << "Invalid choice. Please try again." << endl;
             }
-        student student;
+            //function to add a new student 
+            void addstudent(){
+            student student;
                     cout <<"enter student details:"<<endl;
                     cout<<"firstname:";
                     cin >> student.firstname;
@@ -82,7 +85,7 @@ using namespace std;
 
 
                 //loop to get details for chosen clubs/societies
-                for (int i = 0; i < numClubs; i ++) {
+                for (int i = 0; i < numClubs && i < 3; i++) {
                     string club;
                     cout <<"enter club/society"<<i + 1 << ":";
                     getline(cin,club);
