@@ -66,6 +66,16 @@ void allocateActivities(Student& student) {
             }
         }
     }
+ // Allocate clubs
+    int clubCount = allocatedSport ? 2 : 3;
+    for (int i = 0; i < clubCount; ++i) {
+        for (const string& club : clubs) {
+            if (club == "Journalism Club" && addStudentToActivity(journalismClub, student, 60, 50)) {
+                student.activities.push_back(club);
+                break;
+            } else if (club == "Red Cross Society" && addStudentToActivity(redCrossSociety, student, 60, 50)) {
+                student.activities.push_back(club);
+                break;
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
