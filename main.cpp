@@ -51,6 +51,21 @@ void allocateActivities(Student& student) {
                 student.activities.push_back(sport);
                 allocatedSport = true;
                 break;
+} else if (sport == "Athletics" && addStudentToActivity(athletics, student, 20, 75)) {
+                student.activities.push_back(sport);
+                allocatedSport = true;
+                break;
+            } else if (sport == "Swimming" && addStudentToActivity(swimming, student, 20, 75)) {
+                student.activities.push_back(sport);
+                allocatedSport = true;
+                break;
+            } else if (sport == "Soccer" && addStudentToActivity(soccer, student, 20, 75)) {
+                student.activities.push_back(sport);
+                allocatedSport = true;
+                break;
+            }
+        }
+    }
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
