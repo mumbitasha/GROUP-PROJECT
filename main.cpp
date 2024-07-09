@@ -1,16 +1,16 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include<fstream>
+
 using namespace std;
 
     //how the students are represented
     struct student {
         string firstname;
         string surname;
-        string gender;
+        char gender;
         int age;
-        string bbitgroup;
+        int bbitgroup;
         vector<string> activities;
     };
     // how the activities are to be represented
@@ -61,9 +61,11 @@ using namespace std;
                     return 0;//exit the program
                 default: cout << "Invalid choice. Please try again." << endl;
             }
+        }
+    }
             //function to add a new student 
             void addstudent(){
-            student student;
+                student student;
                     cout <<"enter student details:"<<endl;
                     cout<<"firstname:";
                     cin >> student.firstname;
@@ -75,6 +77,8 @@ using namespace std;
                     cin>> student.age;
                     cout<<"bbit group(1/2/3):";
                     cin>> student.bbitgroup;
+                if (!allocateactivity(student, sports)){
+                    if (!allocateactivity(student, club)){ 
                 }
 
                 //check if student is willing to participate in clubs/societies
