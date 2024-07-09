@@ -112,6 +112,29 @@ void printStudentActivities(const vector<Student>& group) {
         cout << endl;
     }
 }
+void viewStudents() {
+    int choice;
+    cout << "1. View all students\n2. View students by group\n";
+    cin >> choice;
+
+    if (choice == 1) {
+        printStudentActivities(group1);
+        printStudentActivities(group2);
+        printStudentActivities(group3);
+    } else if (choice == 2) {
+        int group;
+        cout << "Enter group number (1, 2, 3): ";
+        cin >> group;
+        switch(group) {
+case 1: printStudentActivities(group1); break;
+            case 2: printStudentActivities(group2); break;
+            case 3: printStudentActivities(group3); break;
+            default: cout << "Invalid group!" << endl;
+        }
+    } else {
+        cout << "Invalid choice!" << endl;
+    }
+}
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
