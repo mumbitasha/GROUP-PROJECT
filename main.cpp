@@ -135,6 +135,14 @@ case 1: printStudentActivities(group1); break;
         cout << "Invalid choice!" << endl;
     }
 }
+void viewClubs() {
+    cout << "Clubs/Societies and their available capacity:" << endl;
+    cout << "Journalism Club: " << 60 - journalismClub.size() << " spots left" << endl;
+    cout << "Red Cross Society: " << 60 - redCrossSociety.size() << " spots left" << endl;
+    cout << "AISEC: " << 60 - aiesec.size() << " spots left" << endl;
+    cout << "Business Club: " << 60 - businessClub.size() << " spots left" << endl;
+    cout << "Computer Science Club: " << 60 - computerScienceClub.size() << " spots left" << endl;
+}
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
