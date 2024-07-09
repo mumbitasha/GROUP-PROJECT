@@ -31,7 +31,13 @@ bool checkGenderConstraint(const vector<Student>& activityList, char gender, int
     }
     return count <= (activityList.size() * maxPercentage / 100);
 }
-
+// Function to add a student to an activity
+bool addStudentToActivity(vector<Student>& activityList, const Student& student, int maxCapacity, int maxGenderPercentage) {
+    if (activityList.size() < maxCapacity && checkGenderConstraint(activityList, student.gender, maxGenderPercentage)) {
+        activityList.push_back(student);
+        return true;
+    }
+    return false;
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
     vector<activity> Club = {{"Journalism Club", 60}, {"Red Cross Society", 60}, {"AISEC", 60}, {"Business Club", 60}, {"Computer Science Club", 60}
