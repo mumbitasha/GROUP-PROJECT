@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+#include<vector>// to enable the student to participate in numerous activities
 #include<string>
 
 using namespace std;
@@ -41,7 +41,7 @@ bool addStudentToActivity(vector<Student>& activityList, const Student& student,
     }
 
 void allocateActivities(Student& student) {
-    srand(time(0));
+    srand(time(0)); // this seeds the random number generator for better randomization
     
     // Allocate sport
     bool allocatedSport = false;
