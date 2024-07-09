@@ -38,6 +38,20 @@ bool addStudentToActivity(vector<Student>& activityList, const Student& student,
         return true;
     }
     return false;
+    }
+
+void allocateActivities(Student& student) {
+    srand(time(0));
+    
+    // Allocate sport
+    bool allocatedSport = false;
+    if (rand() % 2 == 0) { // 50% chance to participate in a sport
+        for (const string& sport : sports) {
+            if (sport == "Rugby" && addStudentToActivity(rugby, student, 20, 75)) {
+                student.activities.push_back(sport);
+                allocatedSport = true;
+                break;
+
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
     vector<activity> Club = {{"Journalism Club", 60}, {"Red Cross Society", 60}, {"AISEC", 60}, {"Business Club", 60}, {"Computer Science Club", 60}
