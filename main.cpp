@@ -143,6 +143,33 @@ void viewClubs() {
     cout << "Business Club: " << 60 - businessClub.size() << " spots left" << endl;
     cout << "Computer Science Club: " << 60 - computerScienceClub.size() << " spots left" << endl;
 }
+void viewSports() {
+    cout << "Sports and their available capacity:" << endl;
+    cout << "Rugby: " << 20 - rugby.size() << " spots left" << endl;
+    cout << "Athletics: " << 20 - athletics.size() << " spots left" << endl;
+    cout << "Swimming: " << 20 - swimming.size() << " spots left" << endl;
+    cout << "Soccer: " << 20 - soccer.size() << " spots left" << endl;
+}
+
+void saveToCSV(const string& filename, const vector<Student>& students) {
+    cout << "Saving to " << filename << ":\n";
+    cout << "FirstName,Surname,Gender,Age,Group,Activities\n";
+ for (const auto& student : students) {
+        cout << student.firstName << "," << student.surname << "," << student.gender << "," << student.age << "," << student.group << ",";
+        for (const auto& activity : student.activities) {
+            cout << activity << " ";
+        }
+        cout << "\n";
+    }
+    cout << "File saved successfully!\n";
+}
+
+void saveAllFiles() {
+    saveToCSV("group1.csv", group1);
+    saveToCSV("group2.csv", group2);
+    saveToCSV("group3.csv", group3);
+ cout << "All files saved successfully!" << endl;
+}
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
