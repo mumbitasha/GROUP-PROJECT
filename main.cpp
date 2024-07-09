@@ -12,8 +12,10 @@ using namespace std;
         int age;
         int bbitgroup;
         vector<string> activities;
-    };
-    // how the activities are to be represented
+};
+      const vector<string> sports = {"Rugby", "Athletics", "Swimming", "Soccer"};
+      const vector<string> clubs = {"Journalism Club", "Red Cross Society", "AISEC", "Business Club", "Computer Science Club"};
+
     struct activity {
         string name;
         int capacity;
