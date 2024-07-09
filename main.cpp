@@ -76,6 +76,42 @@ void allocateActivities(Student& student) {
             } else if (club == "Red Cross Society" && addStudentToActivity(redCrossSociety, student, 60, 50)) {
                 student.activities.push_back(club);
                 break;
+        }
+    }
+}
+
+void addStudent() {
+    Student student;
+    cout << "Enter first name: ";
+    cin >> student.firstName;
+    cout << "Enter surname: ";
+    cin >> student.surname;
+    cout << "Enter gender (M/F): ";
+    cin >> student.gender;
+    cout << "Enter age: ";
+    cin >> student.age;
+    cout << "Enter group (1, 2, 3): ";
+    cin >> student.group;
+
+    allocateActivities(student);
+
+    switch(student.group) {
+        case 1: group1.push_back(student); break;
+        case 2: group2.push_back(student); break;
+        case 3: group3.push_back(student); break;
+        default: cout << "Invalid group!" << endl;
+    }
+}
+
+void printStudentActivities(const vector<Student>& group) {
+    for (const auto& student : group) {
+        cout << "Student: " << student.firstName << " " << student.surname << ", Gender: " << student.gender << ", Age: " << student.age << ", Group: " << student.group << ", Activities: ";
+        for (const auto& activity : student.activities) {
+            cout << activity << " ";
+        }
+        cout << endl;
+    }
+}
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
