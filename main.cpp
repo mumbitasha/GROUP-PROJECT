@@ -21,13 +21,16 @@ vector<Student> group3;
 
 vector<Student> rugby, athletics, swimming, soccer;
 vector<Student> journalismClub, redCrossSociety, aiesec, businessClub, computerScienceClub;
-    struct activity {
-        string name;
-        int capacity;
-        int malenumber=0;
-        int femalenumber=0;
-        vector<student> enrolledstudents;
-    };
+   // Function to check gender constraints
+bool checkGenderConstraint(const vector<Student>& activityList, char gender, int maxPercentage) {
+    int count = 0;
+    for (const auto& student : activityList) {
+        if (student.gender == gender) {
+            count++;
+        }
+    }
+    return count <= (activityList.size() * maxPercentage / 100);
+}
 
     //how to store all students, clubs&societies and sports
     vector<activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
