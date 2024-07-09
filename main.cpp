@@ -15,7 +15,12 @@ using namespace std;
 };
       const vector<string> sports = {"Rugby", "Athletics", "Swimming", "Soccer"};
       const vector<string> clubs = {"Journalism Club", "Red Cross Society", "AISEC", "Business Club", "Computer Science Club"};
+vector<Student> group1;
+vector<Student> group2;
+vector<Student> group3;
 
+vector<Student> rugby, athletics, swimming, soccer;
+vector<Student> journalismClub, redCrossSociety, aiesec, businessClub, computerScienceClub;
     struct activity {
         string name;
         int capacity;
